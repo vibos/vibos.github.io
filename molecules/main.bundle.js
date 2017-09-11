@@ -26,7 +26,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".generator {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\r\n  float: left;\r\n  -ms-flex-wrap: wrap-reverse;\r\n      flex-wrap: wrap-reverse;\r\n  -webkit-box-align: start;\r\n      -ms-flex-align: start;\r\n          align-items: flex-start;\r\n  -ms-flex-line-pack: center;\r\n      align-content: center;\r\n  background: #fff;\r\n  border: 1px solid #ccc;\r\n}\r\n\r\n.ball {\r\n  margin: 3px;\r\n}\r\n", ""]);
+exports.push([module.i, ".generator {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\r\n  -ms-flex-wrap: wrap-reverse;\r\n      flex-wrap: wrap-reverse;\r\n  -webkit-box-align: start;\r\n      -ms-flex-align: start;\r\n          align-items: flex-start;\r\n  -ms-flex-line-pack: center;\r\n      align-content: center;\r\n  background: #fff;\r\n  border: 1px solid #ccc;\r\n}\r\n\r\n.ball {\r\n  margin: 3px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -64,7 +64,7 @@ module.exports = "<app-balls-generator></app-balls-generator>\n"
 /***/ 150:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-xs-6\">\n    <div class=\"generator jumbotron\">\n      <div class=\"ball\" draggable=\"true\" (dragstart)=\"onDragStart($event, i)\" (dragend)=\"onDragEnd($event, i)\" *ngFor=\"let ball of Balls; let i = index\" (mousedown)=\"onMouseDown($event)\" [ngStyle]=\"{'background': ball.color, 'width.px': ball.radius * 2, 'height.px': ball.radius * 2}\"></div>\n    </div>\n  </div>\n  <div class=\"col-xs-6\">\n    <app-canvas [offsetX]=\"offsetX\" [offsetY]=\"offsetY\" [radius]=\"radius\" [color]=\"color\"></app-canvas>\n  </div>\n</div>\n"
+module.exports = "<div class=\"row\">\n  <div class=\"col-xs-6\">\n    <div class=\"generator jumbotron\">\n      <div class=\"ball\" draggable=\"true\" (dragstart)=\"onDragStart($event, i)\" (dragend)=\"onDragEnd($event, i)\" *ngFor=\"let ball of Balls; let i = index\" (mousedown)=\"onMouseDown($event)\" [ngStyle]=\"{'background': ball.color, 'width.px': ball.radius * 2, 'height.px': ball.radius * 2}\"></div>\n    </div>\n\t\n    <div class=\"panel panel-default\">\n\t  <div class=\"panel-body\">\n\t\tDrag balls from left to right &rarr;\n\t  </div>\n\t</div>\n\t\n    <div class=\"panel panel-default\">\n\t  <div class=\"panel-body\">\n\t\tAll balls have equal impulses but different directions of motion.\n\t  </div>\n\t</div>\n  </div>\n  <div class=\"col-xs-6\">\n    <app-canvas [offsetX]=\"offsetX\" [offsetY]=\"offsetY\" [radius]=\"radius\" [color]=\"color\"></app-canvas>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -255,6 +255,8 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__canvas_canvas_component__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pipes_round_pipe__ = __webpack_require__(84);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+// Production build:
+// ng build --base-href https://vibos.github.io/molecules/
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
